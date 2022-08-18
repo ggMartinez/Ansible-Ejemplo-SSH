@@ -1,7 +1,7 @@
 ---
 - hosts: all
   tasks:
-    - name: Desactivar Passwords en SSH
+    - name: Cambiar puerto de SSH
       ansible.builtin.lineinfile:
         path: /etc/ssh/sshd_config
         regexp: '#Port\ 22'
@@ -22,8 +22,9 @@
     - name: Restringir usuarios de SSH
       ansible.builtin.lineinfile:
         path: /etc/ssh/sshd_configh
-        line: AllowUsers el.kevin el.apple
+        line: AllowUsers el.kevin 
         create: yes
+
     - name: Reiniciar SSH
       systemd:
         state: restarted
