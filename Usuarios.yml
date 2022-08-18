@@ -1,0 +1,17 @@
+---
+- hosts: all
+  tasks:
+
+    - name: Crear usuario El Kevin
+      user: 
+        name: el.kevin
+        comment: El Kevin Pa'
+        group: wheel 
+        password: "$6$JgjVJ79I$KDdSR.b4mwct5oIXw5XfdQMn2KQQfXykW15AaeTOG4OOcFv4H5NsxrIqTAkS/LV04eOIKqMzwADcHn/Tillzn/"
+   
+    - name: Agregar clave para El Kevin
+      authorized_key:
+        user: el.kevin
+        state: present
+        key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDAR9PxF03NltXI+tQDkN8iLCI3jiYuHpUB3lEBhp2dXcJhaq2sJS2/43ye3kVJeo/RolTgVWlwQXTPBxvmBMpWsd10S3Jziw4DilgTm7UunUFwECXQ4Mmw+AWOhtcrn6TeW6AqIN5myh/NnDhpz7CJOrreR5jrPhxP1anFmhWfOkCtS0o57WaD7YWjJSedj2Qa2s9drPnMuNJh6pF9NX7+TmBhi3G0hN2Li1Up3Hw3Iol+7qvpQ0rnP4xl61MXS3bZimQLVnASR0GXkHNKrji9YIWjbW5IOmAAbjEBtiLixBgIudeiDo8v8d4amD2FZM0+tgvwxL5EpLPJHyHX+5tctgDn71Rz7HQD1PgBPScGLPtXwpDtQo/eIl/gu0xsdGPSegFDHyBE751Fyc+/RhslYkFdcIr2ZiXx8MAG3l+XwcHWjZpr75HyNyI90cFTLXiryySYHp53kj2oIu8kidiShLPnN644rh0ivDbIuHVolb6khCs57U28LrQtYDMdXPE= gonzalo.martinez@Asgard"
+
